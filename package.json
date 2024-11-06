@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@livekit/components-react": "^2.6.7",
+    "@livekit/components-styles": "^1.1.4",
+    "livekit-client": "^2.5.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.80.4"
+  },
+  "scripts": {
+    "build:scss": "sass node_modules/@livekit/components-styles:reactapp/public/css",
+    "watch:scss": "sass --watch node_modules/@livekit/components-styles:apps/reactapp/reactapp/public/css"
+  }
+}

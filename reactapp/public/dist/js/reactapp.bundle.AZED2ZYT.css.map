@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../apps/reactapp/reactapp/public/js/test.css"],
+  "sourcesContent": [".app-wrapper{\r\n    background-color: red;\r\n}"],
+  "mappings": ";AAAA;AACI;AAAA;",
+  "names": []
+}

@@ -1,0 +1,49 @@
+[data-theme=default] {
+  color-scheme: dark;
+  --bg: #111;
+  --bg2: rgb(29.75, 29.75, 29.75);
+  --bg3: rgb(42.5, 42.5, 42.5);
+  --bg4: rgb(55.25, 55.25, 55.25);
+  --bg5: #444444;
+  --fg: #fff;
+  --fg2: rgb(244.8, 244.8, 244.8);
+  --fg3: rgb(234.6, 234.6, 234.6);
+  --fg4: rgb(224.4, 224.4, 224.4);
+  --fg5: rgb(214.2, 214.2, 214.2);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-fg: #fff;
+  --accent-bg: #1f8cf9;
+  --accent2: rgb(50.867826087, 150.2, 249.532173913);
+  --accent3: rgb(70.7356521739, 160.4, 250.0643478261);
+  --accent4: rgb(90.6034782609, 170.6, 250.5965217391);
+  --danger-fg: #fff;
+  --danger: #f91f31;
+  --danger2: rgb(249.532173913, 50.867826087, 67.2713043478);
+  --danger3: rgb(250.0643478261, 70.7356521739, 85.5426086957);
+  --danger4: rgb(250.5965217391, 90.6034782609, 103.8139130435);
+  --success-fg: #fff;
+  --success: #1ff968;
+  --success2: rgb(50.867826087, 249.532173913, 117.3930434783);
+  --success3: rgb(70.7356521739, 250.0643478261, 130.7860869565);
+  --success4: rgb(90.6034782609, 250.5965217391, 144.1791304348);
+  --control-fg: var(--fg);
+  --control-bg: var(--bg2);
+  --control-hover-bg: var(--bg3);
+  --control-active-bg: var(--bg4);
+  --control-active-hover-bg: var(--bg5);
+  --connection-excellent: #06db4d;
+  --connection-good: #f9b11f;
+  --connection-poor: #f91f31;
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  --font-size: 16px;
+  --line-height: 1.5;
+  --border-radius: 0.5rem;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  --drop-shadow: rgba(255, 255, 255, 0.2) 0px 0px 24px;
+  --grid-gap: 0.5rem;
+  --control-bar-height: 69px;
+  --chat-header-height: 69px;
+}
+
+/*# sourceMappingURL=default.css.map */

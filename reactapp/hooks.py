@@ -25,11 +25,11 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/reactapp/css/reactapp.css"
+app_include_css = ["/assets/css/custom_app.min.css"]
 # app_include_js = "/assets/reactapp/js/reactapp.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/reactapp/css/reactapp.css"
+web_include_css = ["/assets/css/custom_app.min.css"]
 # web_include_js = "/assets/reactapp/js/reactapp.js"
 
 # include custom scss in every website theme (without file extension ".scss")

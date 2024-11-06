@@ -1,0 +1,231 @@
+.button, .start-audio-button, .chat-toggle, .disconnect-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  color: var(--control-fg);
+  background-image: none;
+  background-color: var(--control-bg);
+  border: 0;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  white-space: nowrap;
+  /* apply accent color (blue) to screen share button, when screen sharing is active */
+}
+.button:not(:disabled):hover, .start-audio-button:not(:disabled):hover, .chat-toggle:not(:disabled):hover, .disconnect-button:not(:disabled):hover {
+  background-color: var(--control-hover-bg);
+}
+.button > svg, .start-audio-button > svg, .chat-toggle > svg, .disconnect-button > svg {
+  overflow: visible;
+}
+.button[aria-pressed=true], [aria-pressed=true].start-audio-button, [aria-pressed=true].chat-toggle, [aria-pressed=true].disconnect-button {
+  background-color: var(--control-active-bg);
+}
+.button[aria-pressed=true]:hover, [aria-pressed=true].start-audio-button:hover, [aria-pressed=true].chat-toggle:hover, [aria-pressed=true].disconnect-button:hover {
+  background-color: var(--control-active-hover-bg);
+}
+.button[data-source=screen_share][data-enabled=true], [data-source=screen_share][data-enabled=true].start-audio-button, [data-source=screen_share][data-enabled=true].chat-toggle, [data-source=screen_share][data-enabled=true].disconnect-button {
+  background-color: var(--accent-bg);
+}
+.button[data-source=screen_share][data-enabled=true]:hover, [data-source=screen_share][data-enabled=true].start-audio-button:hover, [data-source=screen_share][data-enabled=true].chat-toggle:hover, [data-source=screen_share][data-enabled=true].disconnect-button:hover {
+  background-color: var(--accent2);
+}
+.button:disabled, .start-audio-button:disabled, .chat-toggle:disabled, .disconnect-button:disabled {
+  opacity: 0.5;
+}
+
+.button-group {
+  display: inline-flex;
+  align-items: stretch;
+  height: 100%;
+}
+.button-group > .button:first-child, .button-group > .start-audio-button:first-child, .button-group > .chat-toggle:first-child, .button-group > .disconnect-button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.button-group-menu {
+  position: relative;
+  flex-shrink: 0;
+}
+.button-group-menu > .button, .button-group-menu > .start-audio-button, .button-group-menu > .chat-toggle, .button-group-menu > .disconnect-button {
+  height: 100%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.button-group-menu > .button::after, .button-group-menu > .start-audio-button::after, .button-group-menu > .chat-toggle::after, .button-group-menu > .disconnect-button::after {
+  margin-left: 0;
+}
+
+.button-menu::after {
+  display: inline-block;
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  margin-top: -0.25rem;
+  margin-left: 0.5rem;
+  border-left: 0.125em solid;
+  border-bottom: 0.125em solid;
+  transform: rotate(-45deg);
+  transform-origin: center center;
+}
+
+.disconnect-button {
+  font-weight: 600;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+.disconnect-button:not(:disabled):hover {
+  --lk-control-hover-bg: var(--danger2);
+  color: var(--danger-fg);
+}
+.disconnect-button:not(:disabled):active {
+  --lk-control-hover-bg: var(--danger3);
+  color: var(--danger-fg);
+}
+
+.chat-toggle {
+  position: relative;
+}
+
+.chat-toggle[data-unread-msgs]:not([data-unread-msgs="0"]):after {
+  content: attr(data-unread-msgs);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.25rem;
+  margin-left: 0.25rem;
+  margin-top: 0.25rem;
+  border-radius: 50%;
+  font-size: 0.5rem;
+  line-height: 0.75;
+  background: var(--accent-bg);
+}
+
+.media-device-select:not(:last-child) {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.media-device-select li:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+.media-device-select li > .button {
+  width: 100%;
+  justify-content: start;
+  padding-block: 0.5rem;
+}
+.media-device-select li:not([data-active=true]) > .button:not(:disabled):hover {
+  background-color: var(--bg3);
+}
+.media-device-select [data-active=false] > .button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.media-device-select [data-active=true] > .button {
+  color: var(--accent-fg);
+  background-color: var(--accent-bg);
+}
+
+.device-menu {
+  width: max-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  min-width: 10rem;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  background-color: var(--bg2);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: var(--box-shadow);
+}
+
+.device-menu-heading {
+  padding: 0.25rem 0.5rem;
+  font-weight: bold;
+  opacity: 0.65;
+}
+
+.start-audio-button {
+  color: var(--accent-fg);
+  background-color: var(--accent-bg);
+}
+@media screen and (max-width: 600px) {
+  .start-audio-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.pagination-control {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: stretch;
+  background-color: var(--lk-control-bg);
+  border-radius: var(--lk-border-radius);
+  transition: opacity ease-in-out 0.15s;
+  opacity: 0;
+}
+.pagination-control:hover {
+  opacity: 1;
+}
+.pagination-control > .button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.pagination-control > .button:first-child > svg {
+  transform: rotate(180deg);
+}
+.pagination-control > .button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.pagination-count {
+  padding: 0.5rem 0.875rem;
+  border-inline: 1px solid var(--lk-bg);
+}
+
+[data-user-interaction=true].pagination-control {
+  opacity: 1;
+}
+
+.pagination-indicator {
+  position: absolute;
+  height: var(--grid-gap);
+  background-color: var(--bg2);
+  width: fit-content;
+  padding: 0.2rem 0.5rem;
+  bottom: calc(var(--grid-gap) / 2);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2rem;
+  opacity: 1;
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+.pagination-indicator span {
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999999px;
+  background-color: var(--fg);
+  opacity: 0.35;
+  transition: opacity linear 0.2s;
+}
+.pagination-indicator span[data-active] {
+  opacity: 0.9;
+}
+
+/*# sourceMappingURL=index.css.map */
